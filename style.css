@@ -29,7 +29,7 @@ header{
     left: 0;
     top:0;
     width: 100%;
-    background-color: rgb(8, 209, 182);
+    background-color: rgb(79, 208, 81);
 }
 
 header p{
@@ -80,15 +80,10 @@ main{
     position: relative;
     height: 100%;
     width:100%;
-    background-image: linear-gradient(rgb(46, 213, 222), rgb(9, 107, 73) , rgb(4, 172, 94));
+    background-image: linear-gradient(rgb(84, 222, 46), rgb(189, 210, 55) , rgb(172, 63, 4));
 }
 
 
-#scroll-trigger{
-    background-color: salmon;
-    width: 2rem;
-    height: 1rem;
-}
 
 /*Context Section*/
 .context{
@@ -102,7 +97,7 @@ main{
 
 .context p{
     padding: 5em;
-    font-size: 2.4rem;
+    font-size: 2vw;
     line-height: 1.5;
 }
 
@@ -156,11 +151,11 @@ img{
 
 
 .caption{
-    padding: 1em;
+    padding: .5em;
     width: 100%;
-    background-color: rgba(171, 250, 247, 0.795);
+    background-color: rgba(171, 250, 184, 0.795);
     text-align:center;
-    font-size: 2rem;
+    font-size: 1.5vw;
     display: none;
     
     position: absolute;    
@@ -173,10 +168,10 @@ img{
 .mini-cap{
     padding: 3em;
     width: 100%;
-    background-color: rgba(4, 66, 64, 0.769);
+    background-color: rgba(38, 66, 4, 0.769);
     text-align:center;
     color: rgba(255, 255, 255, 0.887);
-    font-size: 2rem;
+    font-size: 1.5vw;
     display: none;
     
     position: absolute;    
@@ -223,6 +218,11 @@ footer{
         padding: .5rem;
         /* border: 3px solid blue; */
     }
+
+    .caption, .mini-cap{
+        font-size: 3vw;
+    }
+
     .gallery{
         
         grid-template-columns: 1fr;
