@@ -14,8 +14,8 @@ html {
 
 body{
     font-family: 'Poppins', sans-serif;
-    border: 3px solid orange;
-    background-color: rgba(174, 104, 7, 0.429);
+    border: 3px solid rgb(13, 196, 193);
+    background-color: rgba(206, 220, 213, 0.429);
 }
 
 
@@ -29,7 +29,7 @@ header{
     left: 0;
     top:0;
     width: 100%;
-    background-color: rgb(8, 209, 182);
+    background-color: rgb(245, 214, 92);
 }
 
 header p{
@@ -45,7 +45,7 @@ header p{
 
 .Buttons a{
     text-decoration: none;
-    color: gray;
+    color: rgb(255, 255, 255);
 }
 
 .button{
@@ -129,9 +129,31 @@ h2{
     padding-bottom: 15rem;
 
     display: grid;
-    grid-template-columns: 1fr 1fr ;
+    grid-template-columns: 1fr 1fr 1fr ;
+    
     transition: all 2s;
 } 
+
+.frame:nth-child(1){
+    grid-column: 1;
+    grid-row: 1;
+}
+.frame:nth-child(2){
+    grid-column: 3;
+    grid-row: 1;
+}
+.frame:nth-child(3){
+    grid-column: 1;
+    grid-row: 2;
+}
+.frame:nth-child(4){
+    grid-column: 3;
+    grid-row: 2;
+}
+.frame:nth-child(5){
+    grid-column: 2;
+    grid-row:3;
+}
 
 .frame{
     position:relative;
