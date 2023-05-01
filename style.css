@@ -6,6 +6,9 @@
     padding:0;
     box-sizing: border-box;
 }
+html {
+    scroll-behavior: smooth;
+  }
 
 body{
     font-family: 'Poppins', sans-serif;
@@ -49,7 +52,7 @@ header p{
     font-size: 2rem;
     padding: .2em;
     border: 3px solid white;
-    transition: all 2s;
+    
 }
 
 .button:hover{
@@ -105,6 +108,7 @@ h2{
 
     display: grid;
     grid-template-columns: 1fr 1fr ;
+    transition: all 2s;
 } 
 
 .frame{
