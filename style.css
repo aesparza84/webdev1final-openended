@@ -183,7 +183,17 @@ img{
 }
 /*Other*/
 
+.botnav a{
+    text-decoration: none;
+    width: 50%;
+    font-size: 2vw;
+    text-align: center;
+}
 
+.botnav{
+    display: flex;
+    justify-content: center;
+}
 
 footer{
     text-align: center;
