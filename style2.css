@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo+2&display=swap');
 
 *{
     margin:0;
@@ -14,7 +15,7 @@ html {
 
 body{
     font-family: 'Poppins', sans-serif;
-    border: 3px solid rgb(13, 196, 193);
+    border: 4px solid rgb(13, 196, 193);
     background-color: rgba(206, 220, 213, 0.429);
 }
 
@@ -29,11 +30,53 @@ header{
     left: 0;
     top:0;
     width: 100%;
-    background-color: rgb(245, 214, 92);
+    background-color: rgb(243, 223, 146);
+}
+
+.menu{
+    /* border: 5px solid red; */
+    margin: 2em;
+    width: 55%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+header a{
+    border-radius: 12px;
+    background-color: rgb(94, 155, 137);
+}
+
+header .pagePick{
+    text-decoration: none;
+    align-items: center;
+    padding: .5rem;
+    font-size: 1.4rem;
+    color: white;
+    transition: all 1s;
+}
+
+.pagePick:hover{
+    background-color: brown;
+    color: aqua;
+    rotate: 1360deg;
 }
 
 header p{
     font-size: 2rem;
+}
+
+h2{
+    font-size: 2rem;
+    text-align: center;
+    text-shadow: 0 20px 5px rgba(47, 51, 51, 0.664);
+
+    text-decoration: underline;
+    animation-name:jiggle;
+    animation-duration: 2.5s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
 
 .Buttons{
@@ -53,12 +96,13 @@ header p{
     font-size: 2rem;
     padding: .2em;
     border: 3px solid white;
-    
+    transition: all .5s;
 }
 
 .button:hover{
     background-color: gray;
     color: white;
+    font-size: 4rem;
 }
 
 main{
@@ -68,7 +112,7 @@ main{
     margin: 1rem auto;
     max-width:85%;
     padding: 1rem;
-    border: 3px solid blue;
+    /* border: 3px solid blue; */
 }
 
 .progress-container{
@@ -87,63 +131,53 @@ main{
 }
 
 
-#scroll-trigger{
-    background-color: salmon;
-    width: 2rem;
-    height: 1rem;
-}
 
 /*Context Section*/
 .context{
     font-family: 'Anton', sans-serif;
 
-    padding: 3em;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .context p{
-    padding: 5em;
-    font-size: 2vw;
+    margin: 11rem;
+    padding: 2rem;
+    font-size: 2.5vw;
     line-height: 1.5;
+    background-color: rgb(228, 221, 221);
+    border-radius: 35px;
+    border-right: 25px solid rgb(94, 155, 127);
+    border-bottom: 15px solid rgb(94, 155, 137);
 }
 
 .context h1{
     font-size: 3rem;
     font-family: 'Poppins', sans-serif;
-    color: rgb(18, 157, 188);
+    color: rgb(94, 155, 137);
 }
 
 /*Gallery section*/
 
-h2{
-    font-size: 2rem;
-    text-align: center;
-    text-decoration: underline;
-}
-
 /*Holds all images*/
-
 #pictures a{
     text-decoration: none;
     font-size: 3rem;
     color: rgb(36, 157, 117);
-    border: .2em solid rgba(51, 228, 228, 0.486);
+    /* border: .2em solid rgba(51, 228, 228, 0.486); */
     border-radius: 25px;
-    
-    transition: 1s all;
 }
 
 main a:hover{
     background-image: linear-gradient(rgb(46, 213, 222), rgb(9, 107, 73) , rgb(4, 172, 94));
     border-radius: 85px;
     color: aliceblue;
-    transition: 1s all;
+
 }
 
 #pictures{
-    border: 3px solid red;
+    /* border: 3px solid red; */
     display: flex;
     left: 0;
     top: 0;
@@ -163,10 +197,10 @@ main a:hover{
 
 .frame{
     position:relative;
-    
-    /* border: 6px solid rgb(9, 225, 85); */
+    display: flex;
+    flex-direction: row;
+    border: 6px solid rgb(225, 142, 9);
 }
-
 
 img{
     bottom: 0;
@@ -176,38 +210,61 @@ img{
     height: 100%;
 }
 
+.frame:hover .caption, .mini-cap{
+    display: block;
+    animation: hoverAn .5s ease-in forwards;
+}
 .frame:hover .caption{
     display: block;
 }
 .frame:hover .mini-cap{
-    display: block;
+    display: inline;
+}
+.frame:hover .beforeTouch{
+    display: none;
 }
 
+.beforeTouch{
+    font-size:4rem;
+    font-family: 'Times New Roman', Times, serif;
+    color:green;
+    
+    animation-name:wait-for-hover;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
 
 .caption{
     padding: 1em;
     width: 50%;
+    height: 70%;
     background-color: rgba(171, 250, 247, 0.795);
     text-align:center;
     font-size: 1.5vw;
     display: none;
     
+    overflow-y:scroll;
     position: absolute;    
     top:0;
     right: 0;
     bottom: 0;
+    /* border: 9px solid red; */
 }
 
 .mini-cap{
     height: 1em;
     padding: 1.5em;
     width: 50%;
+    height: 30%;
     background-color: rgba(4, 66, 64, 0.769);
     text-align:center;
     color: rgba(255, 255, 255, 0.887);
     font-size: 1.5vw;
     display: none;
     
+    /* border: 4px solid lime; */
     position: absolute;   
     right: 0;
     bottom: 0;
@@ -218,6 +275,7 @@ img{
     width: 50%;
     font-size: 2vw;
     text-align: center;
+    transition: all 2s;
 }
 
 .botnav{
@@ -233,6 +291,49 @@ footer{
 }
 
 /* media stuff */
+@keyframes jiggle {
+    0%{
+        transform: translate(-10%);
+    } 
+    
+
+    100%{
+        transform: translate(10%)
+    }
+}
+
+@keyframes hoverAn {
+    0%{
+        opacity: 0%;
+    }
+
+    100%{
+        opacity: 100%;
+    }
+}
+
+@keyframes wait-for-hover{
+  
+    
+   0%{
+       font-size: 0.5rem;    
+       transform: rotateY(-300deg);
+    } 
+          
+    25%{
+        transform:  rotateY(300deg);
+        color:rgb(29, 152, 205);
+    }
+      
+    100%{
+        color:rgb(117, 205, 29);
+        font-size: 4rem;
+        transform:  rotateX(24deg) rotateY(50deg);
+        text-decoration: wavy;
+    }
+}
+
+
 @media(max-width:70rem){
 
     header{
@@ -251,6 +352,7 @@ footer{
 
     body{
         background-color: rgba(255, 221, 48, 0.551);
+        /* border: 5p solid red; */
     }
 
     main{
@@ -259,12 +361,22 @@ footer{
         padding: .5rem;
         /* border: 3px solid blue; */
     }
+
+    .context h1{
+        font-size: 4vw;
+    }
+    .context p{
+        margin: 6rem;
+    }
     .caption, .mini-cap{
         font-size: 1.5vw;
     }
+    .caption{
+        overflow: scroll;
+    }
     .gallery{
-        margin: 1rem auto;
-        width: 85%;
+        
+        width: 95%;
         /* border: 3px solid red; */
         row-gap: 15rem;
         padding-bottom: 15rem;
@@ -278,6 +390,10 @@ footer{
         width: 100%;
     }
 
+    .beforeTouch{
+       display:none;
+        animation-name:none;
+    }
     .caption{width: 100%;}
     .mini-cap{width: 100%;}
     
@@ -304,5 +420,13 @@ footer{
 
     .context p{
         padding: .3em;
+    }
+
+    .progress-container{
+        position: fixed;
+        top:0;
+        height: 100%;
+        width: 1rem;
+      
     }
 }

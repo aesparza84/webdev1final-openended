@@ -26,4 +26,7 @@ $(window).scroll(function(){
     }
 })
 
-$(figcaption).fadeIn(slow);
+$('.frame').hover(function(){
+    $('.caption').fadeIn();
+})
+

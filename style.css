@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo+2&display=swap');
 
 *{
     margin:0;
@@ -14,7 +15,7 @@ html {
 
 body{
     font-family: 'Poppins', sans-serif;
-    border: 3px solid orange;
+    /* border: 3px solid orange; */
     background-color: rgba(174, 104, 7, 0.429);
 }
 
@@ -29,11 +30,44 @@ header{
     left: 0;
     top:0;
     width: 100%;
-    background-color: rgb(79, 208, 81);
+    background-color: rgb(79, 208, 182);
 }
 
 header p{
     font-size: 2rem;
+}
+
+
+
+.menu{
+    /* border: 5px solid red; */
+    margin: 2em;
+    width: 55%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    border-radius: 12px;
+}
+
+
+
+header .pageCheck{
+    text-decoration: none;
+    /* border: 3px solid firebrick; */
+    background-color: aliceblue;
+    border-radius: 13px;
+    align-items: center;
+    padding: .5rem;
+    font-size: 1.4rem;
+    color: rgb(207, 96, 96);
+    transition: all 1s;
+}
+
+.pageCheck:hover{
+    border-radius: 25px;
+    background-color: rgb(212, 118, 111);
+    color: white;
 }
 
 .Buttons{
@@ -45,7 +79,7 @@ header p{
 
 .Buttons a{
     text-decoration: none;
-    color: gray;
+    color: rgb(207, 96, 96);
 }
 
 .button{
@@ -53,12 +87,14 @@ header p{
     font-size: 2rem;
     padding: .2em;
     border: 3px solid white;
-    
+    background-color: aliceblue;
+    transition: all 1s;
 }
 
 .button:hover{
     background-color: gray;
     color: white;
+    border-radius: 16px;
 }
 
 main{
@@ -80,39 +116,49 @@ main{
     position: relative;
     height: 100%;
     width:100%;
-    background-image: linear-gradient(rgb(84, 222, 46), rgb(189, 210, 55) , rgb(172, 63, 4));
+    background-image: linear-gradient(rgb(195, 142, 123), rgb(167, 51, 51) , rgb(222, 1, 1));
 }
 
 
 
 /*Context Section*/
 .context{
-    font-family: 'Anton', sans-serif;
-
-    padding: 3em;
+    font-family: 'Exo 2', sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .context p{
-    padding: 5em;
-    font-size: 2vw;
+    margin: 11rem;
+    padding: 2rem;
+    font-size: 2.5vw;
     line-height: 1.5;
+    background-color: rgb(228, 221, 221);
+    border-radius: 35px;
+    border-left: 25px solid rgb(155, 94, 94);
+    border-top: 15px solid rgb(155, 94, 94);
 }
 
 .context h1{
     font-size: 3rem;
     font-family: 'Poppins', sans-serif;
-    color: rgb(18, 157, 188);
+    color: rgb(207, 96, 96);
 }
 
+
+.split{
+    width: 100%;
+    height: 2px;
+    background-color: rgb(126, 81, 81);
+    margin-bottom: 2rem;
+}
 /*Gallery section*/
 
 h2{
     font-size: 2rem;
     text-align: center;
-    text-decoration: underline;
+    text-shadow: 0 20px 5px rgba(47, 51, 51, 0.664);
 }
 
     /*Holds all images*/
@@ -122,31 +168,40 @@ h2{
     /* border: 3px solid red; */
     row-gap: 15rem;
     padding-bottom: 15rem;
+    
 
     display: grid;
     grid-template-columns: 1fr 1fr ;
-    transition: all 2s;
 } 
 
 .frame{
     position:relative;
-    /* border: 6px solid rgb(9, 225, 85); */
+    border: 20px solid rgb(126, 81, 81);
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 
 img{
-    bottom: 0;
+    border-radius: 5px;
     display: block;
     object-fit: cover;
     width: 100%;
     height: 100%;
 }
 
+.frame:hover .caption, .mini-cap{
+    display: block;
+    animation: hoverAn .5s ease-in forwards;
+}
+
 .frame:hover .caption{
     display: block;
 }
 .frame:hover .mini-cap{
-    display: block;
+    display: inline;
 }
 
 
@@ -159,14 +214,15 @@ img{
     display: none;
     
     position: absolute;    
+    height: 70%;
     top:0%;
     left: 0;
     right: 0;
-    bottom: 0;
 }
 
 .mini-cap{
-    padding: 3em;
+    padding: 1em;
+    position: absolute;
     width: 100%;
     background-color: rgba(38, 66, 4, 0.769);
     text-align:center;
@@ -174,15 +230,19 @@ img{
     font-size: 1.5vw;
     display: none;
     
-    position: absolute;    
-    top:100%;
+    height: 30%;
     left: 0;
     right: 0;
     bottom: 0;
-    transition: all 1s;
+    border: 3px solid black;
 }
 /*Other*/
-
+main a:hover{
+    background-image: linear-gradient(rgb(166, 107, 107), rgb(145, 33, 33) , rgb(196, 13, 13));
+    border-radius: 85px;
+    color: aliceblue;
+    transition: 1s all;
+}
 .botnav a{
     text-decoration: none;
     width: 50%;
@@ -202,10 +262,20 @@ footer{
 }
 
 /* media stuff */
+@keyframes hoverAn {
+    0%{
+        opacity: 0%;
+    }
+
+    100%{
+        opacity: 100%;
+    }
+}
+
 @media(max-width:70rem){
 
     header{
-        background-color: rgb(255, 255, 255);;
+        background-color: rgb(255, 249, 249);;
     }
 
     .Buttons a{
@@ -220,17 +290,27 @@ footer{
 
     body{
         background-color: rgba(255, 221, 48, 0.551);
+        /* border: 5px solid red; */
     }
 
     main{
         margin: .5em auto;
-        max-width:85%;
+        max-width:90%;
         padding: .5rem;
         /* border: 3px solid blue; */
     }
+    .context p{
+        margin: 5rem;
+    }
 
+    .context h1{
+        font-size: 4vw;
+    }
     .caption, .mini-cap{
         font-size: 3vw;
+    }
+    .caption{
+        overflow: scroll;
     }
 
     .gallery{
